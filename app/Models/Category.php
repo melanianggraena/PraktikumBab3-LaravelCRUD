@@ -27,6 +27,12 @@ class Category extends Model
 
 
     // ── Scope ─────────────────────────────────────────────────
+    /**
+     * ==============================
+     * CHALLENGE #2
+     * Scope Active
+     * ==============================
+     */
     public function scopeActive($query)
     {
         return $query->where('is_active', true);

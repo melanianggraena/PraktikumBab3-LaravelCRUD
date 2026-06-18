@@ -7,6 +7,21 @@
 
 @section('content')
 
+{{-- CHALLENGE #6 --}}
+{{-- Slug otomatis dari nama kategori --}}
+
+<script>
+document.getElementById('name').addEventListener('keyup', function() {
+
+    let slug = this.value
+        .toLowerCase()
+        .replace(/[^a-z0-9 ]/g, '')
+        .replace(/\s+/g, '-');
+
+    document.getElementById('slug').value = slug;
+});
+</script>
+
 <div class="container">
 
 @if ($errors->any())

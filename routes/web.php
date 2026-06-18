@@ -11,6 +11,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 
 
+
 // 1. BASIC ROUTES
 // Route::get('/basic', fn () => 'GET request');
 // Route::post('/basic', fn () => 'POST request');
@@ -53,8 +54,8 @@ Route::prefix('admin')
 Route::resource('products', ProductController::class);
 
 
-Route::resource('categories', CategoryController::class)
-    ->only(['index', 'store', 'destroy']);
+Route::resource('categories', CategoryController::class);
+    // ->only(['index', 'store', 'destroy']);
 
 
 Route::resource('orders', OrderController::class)
@@ -82,12 +83,12 @@ Route::fallback(function () {
 
 
 
-Route::get('/admin/dashboard', function () {
-    return 'Dashboard';
-})->name('admin.dashboard');
+// Route::get('/admin/dashboard', function () {
+//     return 'Dashboard';
+// })->name('admin.dashboard');
 
 Route::get('/login', function () {
     return 'Login Page';
 })->name('login');
 
-Route::view('/test', 'test');
+// Route::view('/test', 'test');
