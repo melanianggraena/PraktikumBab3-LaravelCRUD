@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,    // 2. Kategori
             ProductSeeder::class,     // 3. Produk (butuh kategori) ]
             OrderSeeder::class,     // 3. Produk (butuh kategori) ]
+            ReviewSeeder::class,     // 4. Review
         ]);
     }
 }

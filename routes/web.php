@@ -10,6 +10,8 @@ use App\Http\Controllers\CategoryProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 
+use App\Http\Controllers\ReportController;
+
 
 
 // 1. BASIC ROUTES
@@ -76,14 +78,17 @@ Route::get('/', function () {
     return redirect()->route('products.index');
 });
 
-Route::fallback(function () {
+
+
+// 7. REPORT ROUTES (challange 3 bab 4)
+Route::get('/reports', [ReportController::class, 'index'])
+    ->name('reports.index');
+
+
+
+    Route::fallback(function () {
     return response()->view('errors.404', [], 404);
 });
-
-
-
-
-
 
 
 // Route::get('/admin/dashboard', function () {
