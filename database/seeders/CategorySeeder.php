@@ -32,4 +32,3 @@ class CategorySeeder extends Seeder
         $this->command->info('✅ ' . count($categories) . ' kategori berhasil dibuat.');
     }
 }
-

@@ -8,15 +8,17 @@ enum ProductStatus: string
     case Active   = 'active';
     case Inactive = 'inactive';
     case Draft    = 'draft';
+    case OutOfStock = 'out_of_stock';
 
 
     // Label untuk tampil di UI
     public function label(): string
     {
         return match ($this) {
-            self::Active   => 'Aktif',
-            self::Inactive => 'Nonaktif',
-            self::Draft    => 'Draft',
+            self::Active     => 'Aktif',
+            self::Inactive   => 'Nonaktif',
+            self::Draft      => 'Draft',
+            self::OutOfStock => 'Stok Habis',
         };
     }
 
@@ -25,9 +27,10 @@ enum ProductStatus: string
     public function color(): string
     {
         return match ($this) {
-            self::Active   => 'success',
-            self::Inactive => 'secondary',
-            self::Draft    => 'warning',
+            self::Active     => 'success',
+            self::Inactive   => 'secondary',
+            self::Draft      => 'warning',
+            self::OutOfStock => 'danger',
         };
     }
 
@@ -36,9 +39,10 @@ enum ProductStatus: string
     public function icon(): string
     {
         return match ($this) {
-            self::Active   => 'bi-check-circle-fill',
-            self::Inactive => 'bi-x-circle-fill',
-            self::Draft    => 'bi-pencil-fill',
+            self::Active     => 'bi-check-circle-fill',
+            self::Inactive   => 'bi-x-circle-fill',
+            self::Draft      => 'bi-pencil-fill',
+            self::OutOfStock => 'bi-exclamation-circle-fill',
         };
     }
 

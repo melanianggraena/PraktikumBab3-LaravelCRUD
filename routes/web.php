@@ -72,6 +72,9 @@ Route::resource(
 // 6. REDIRECT & FALLBACK
 Route::redirect('/old-url', '/new-url', 301);
 
+Route::get('/', function () {
+    return redirect()->route('products.index');
+});
 
 Route::fallback(function () {
     return response()->view('errors.404', [], 404);
